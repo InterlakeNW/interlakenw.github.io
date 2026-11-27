@@ -89,7 +89,7 @@ def footer():
   </div>
   <div class="footer-bottom"><span>© <span id="yr">{datetime.date.today().year}</span> {BIZ['name']}. All rights reserved.</span><span>Licensed, bonded &amp; insured in Washington State</span></div>
 </div></footer>
-<div class="call-bar"><a href="tel:{BIZ['tel']}">Call Now</a><a href="contact.html">Free Estimate</a></div>
+<div class="call-bar"><a href="tel:{BIZ['tel']}">Call Now</a><a href="contact.html">Free Quote</a></div>
 <script src="js/main.js" defer></script>"""
 
 def org_schema():
