@@ -21,12 +21,12 @@ BIZ = {
 TODAY = datetime.date.today().isoformat()
 
 REGIONS = {
-    "Skagit & Snohomish County": ["Mount Vernon", "Burlington", "Stanwood", "Arlington", "Marysville", "Lake Stevens",
-                                  "Everett", "Mukilteo", "Mill Creek", "Lynnwood", "Edmonds", "Bothell"],
     "Seattle & North King County": ["Seattle", "Shoreline", "Lake Forest Park", "Kenmore", "Woodinville", "Mercer Island"],
     "Eastside": ["Bellevue", "Redmond", "Kirkland", "Issaquah", "Sammamish", "Newcastle"],
-    "South King & Pierce County": ["Renton", "Tukwila", "Burien", "SeaTac", "Des Moines", "Kent", "Auburn",
-                                   "Federal Way", "Puyallup", "Fife", "University Place", "Tacoma"],
+    "North: Snohomish & Skagit County": ["Bothell", "Edmonds", "Lynnwood", "Mill Creek", "Mukilteo", "Everett", "Lake Stevens",
+                                         "Marysville", "Arlington", "Stanwood", "Burlington", "Mount Vernon"],
+    "South: South King & Pierce County": ["Renton", "Tukwila", "Burien", "SeaTac", "Des Moines", "Kent", "Auburn",
+                                          "Federal Way", "Puyallup", "Fife", "University Place", "Tacoma"],
 }
 ALL_CITIES = [c for v in REGIONS.values() for c in v]
 
@@ -61,7 +61,7 @@ def header(current):
     return f"""<a class="skip-link" href="#main">Skip to content</a>
 <div class="topbar"><div class="container">
   <span class="hide-sm">Licensed &amp; insured general contractor · WA Lic. {BIZ['license']}</span>
-  <span>Serving Mount Vernon to Tacoma · <a href="tel:{BIZ['tel']}">{BIZ['phone']}</a></span>
+  <span>Serving Seattle &amp; surrounding areas · <a href="tel:{BIZ['tel']}">{BIZ['phone']}</a></span>
 </div></div>
 <header class="site-header"><div class="container">
   <a class="brand" href="index.html" aria-label="{BIZ['short']} home"><img src="img/logo.webp" alt="{BIZ['short']}" width="480" height="377"></a>
@@ -72,7 +72,7 @@ def header(current):
 def footer():
     svc = "".join(f'<li><a href="{h}">{l}</a></li>' for h, l in SUB)
     return f"""<section class="cta-band"><div class="container">
-  <div><h2>Ready to start your project?</h2><p>Free, no-pressure estimates anywhere from Mount Vernon to Tacoma.</p></div>
+  <div><h2>Ready to start your project?</h2><p>Free, no-pressure estimates throughout Seattle and the surrounding areas.</p></div>
   <div class="btn-row" style="margin:0"><a class="btn btn--white" href="contact.html">Get a Free Estimate</a><a class="btn btn--ghost" href="tel:{BIZ['tel']}">Call {BIZ['phone']}</a></div>
 </div></section>
 <footer class="site-footer"><div class="container">
@@ -198,7 +198,7 @@ def build_home():
 <div class="container">
   <span class="eyebrow">Puget Sound General Contractor</span>
   <h1>Transforming Spaces, Restoring Confidence</h1>
-  <p>Your trusted partner for remodeling, tenant improvements and restoration — serving homes and businesses from Mount Vernon to Tacoma.</p>
+  <p>Your trusted partner for remodeling, tenant improvements and restoration — serving homes and businesses throughout Seattle and the surrounding areas.</p>
   <div class="btn-row"><a class="btn btn--primary" href="contact.html">Get a Free Estimate</a><a class="btn btn--ghost" href="projects.html">See Our Work</a></div>
   <div class="hero-badges"><span>Licensed &amp; insured</span><span>Residential &amp; commercial</span><span>Free estimates</span></div>
 </div></section>
@@ -231,13 +231,13 @@ def build_home():
 {testimonials_html()}
 
 <section class="section"><div class="container grid grid-2">
-<div><span class="eyebrow">Service area</span><h2>From Mount Vernon to Tacoma</h2>
-<p class="lead">Based in Seattle, we work throughout Skagit, Snohomish, King and Pierce counties — including Everett, Lynnwood, Bellevue, Redmond, Renton, Kent and Tacoma.</p>
+<div><span class="eyebrow">Service area</span><h2>All of Seattle &amp; the surrounding areas</h2>
+<p class="lead">Based in Seattle, we serve every Seattle neighborhood and the communities around it — including Shoreline, Bellevue, Redmond, Kirkland, Renton, Lynnwood, Everett, Kent and beyond.</p>
 <a class="btn btn--outline" href="service-areas.html">See all service areas</a></div>
 <div>{pic("multifamily-framing", "Multifamily building framing and sheathing in progress", "(max-width:900px) 100vw, 50vw", cls="rounded-img", w=1200, h=1600)}</div>
 </div></section>"""
     page("index.html", "Interlake Construction | Remodeling & Restoration Contractor, Seattle WA",
-         "Seattle general contractor for home remodeling, commercial tenant improvements and water/fire damage reconstruction. Serving Mount Vernon to Tacoma. Free estimates: (206) 659-5021.",
+         "Seattle general contractor for home remodeling, commercial tenant improvements and water/fire damage reconstruction. Serving Seattle &amp; surrounding areas. Free estimates: (206) 659-5021.",
          body)
 
 # ---------------------------------------------------------------- SERVICES HUB
@@ -288,7 +288,7 @@ def build_residential():
     service_page("residential.html", "Residential Remodeling & Home Renovation",
         "Kitchens, bathrooms, whole-home remodels and ADUs across Seattle and the Puget Sound.", "kitchen-remodel",
         "Home Remodeling Contractor Seattle | Kitchens, Baths & ADUs | Interlake",
-        "Kitchen and bathroom remodels, whole-home renovations and ADU/DADU construction from Mount Vernon to Tacoma. Licensed WA contractor. Free estimates.",
+        "Kitchen and bathroom remodels, whole-home renovations and ADU/DADU construction in Seattle and surrounding areas. Licensed WA contractor. Free estimates.",
         "Whether you're updating one room or reimagining your whole home, our team handles every trade under one roof — so you get one point of contact, a clear schedule and work that's done right the first time.",
         [("Kitchens & Baths", "Layouts, cabinetry, counters, tile and fixtures — designed around how you actually use the space.", ["Kitchen remodels", "Bathroom remodels", "Tile & flooring", "Custom cabinetry & trim"]),
          ("Whole-Home & Additions", "From custom homes to full gut renovations and additions that add space and value.", ["Custom homes", "Whole-home remodels", "Framing, drywall & finishing", "Roofing & exteriors"]),
@@ -365,11 +365,11 @@ def build_projects():
 # ---------------------------------------------------------------- AREAS
 def build_areas():
     regions = "".join(f'<div class="region"><h3>{r}</h3><ul class="area-list">{"".join(f"<li>{c}</li>" for c in cs)}</ul></div>' for r, cs in REGIONS.items())
-    body = page_hero("Service Areas: Mount Vernon to Tacoma",
-                     "Remodeling, tenant improvements and reconstruction throughout Skagit, Snohomish, King and Pierce counties.",
+    body = page_hero("Service Areas: Seattle &amp; Surrounding Areas",
+                     "Remodeling, tenant improvements and reconstruction for homes and businesses across Seattle and the greater Puget Sound.",
                      "multifamily-framing", [("Home", "index.html"), ("Service Areas", "")]) + f"""
 <section class="section"><div class="container">
-<p class="lead">Interlake Construction is based in Seattle and serves homeowners, businesses and property managers along the I-5 corridor and Eastside — from Mount Vernon in the north to Tacoma in the south, and all the surrounding communities. Don't see your city? <a href="contact.html">Ask us</a> — if it's in the region, we likely serve it.</p>
+<p class="lead">Interlake Construction is based in Seattle and serves homeowners, businesses and property managers in every Seattle neighborhood and throughout the surrounding areas — north, south and across the lake on the Eastside. Don't see your city? <a href="contact.html">Ask us</a> — if it's in the area, we likely serve it.</p>
 {regions}
 </div></section>
 <section class="section section--alt"><div class="container grid grid-3">
@@ -377,8 +377,8 @@ def build_areas():
 <div class="value"><h3>Commercial</h3><p>Tenant improvements and build-outs from Everett to Bellevue to Tacoma.</p><a class="card-link" href="commercial.html">Commercial services</a></div>
 <div class="value"><h3>Restoration</h3><p>Reconstruction after water, fire and mold damage across the Puget Sound.</p><a class="card-link" href="restoration.html">Restoration services</a></div>
 </div></section>"""
-    page("service-areas.html", "Service Areas | General Contractor Mount Vernon to Tacoma, WA | Interlake",
-         "Interlake Construction serves Seattle, Everett, Bellevue, Redmond, Renton, Kent, Tacoma, Mount Vernon and surrounding Puget Sound communities.",
+    page("service-areas.html", "Service Areas | Seattle & Surrounding Areas | Interlake",
+         "Interlake Construction serves all of Seattle and the surrounding areas, including Bellevue, Redmond, Kirkland, Renton, Lynnwood, Everett and Kent.",
          body, crumbs=[("Home", ""), ("Service Areas", "service-areas")])
 
 # ---------------------------------------------------------------- ABOUT
@@ -388,7 +388,7 @@ def build_about():
 <section class="section"><div class="container grid grid-2">
 <div><span class="eyebrow">Who we are</span><h2>Craftsmanship and customer service, every time</h2>
 <p>At Interlake Construction LLC, we pride ourselves on delivering exceptional craftsmanship and unparalleled customer service. Whether you're renovating your home, upgrading your commercial space or restoring a property after damage, our team is here to make the process simple.</p>
-<p>We handle residential remodels, commercial tenant improvements and reconstruction from Mount Vernon to Tacoma — coordinating every trade so you have one point of contact and one clear schedule.</p>
+<p>We handle residential remodels, commercial tenant improvements and reconstruction throughout Seattle and the surrounding areas — coordinating every trade so you have one point of contact and one clear schedule.</p>
 <ul class="contact-info"><li>{ICON['shield']}<div><strong>Licensed, bonded &amp; insured</strong>Washington contractor license {BIZ['license']}</div></li></ul></div>
 <div>{pic("office-stone-feature-wall", "Interlake technician installing a stone feature wall", "(max-width:900px) 100vw, 50vw", cls="rounded-img", w=1200, h=1600)}</div>
 </div></section>
