@@ -5,7 +5,7 @@ import json, os, datetime
 
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "docs")
 LIVE_URL = "https://interlakenw.github.io"  # where the site is served now; change to SITE after domain switch
-WEB3FORMS_KEY = ""  # Web3Forms access key (public-safe). Submissions email office@interlakenw.com
+WEB3FORMS_KEY = "9a5e8652-03c0-4c27-9bf8-6eed6fa8b5c8"  # Web3Forms access key (public-safe). Submissions email office@interlakenw.com
 SITE = "https://www.interlakenw.com"
 BIZ = {
     "name": "Interlake Construction LLC",
